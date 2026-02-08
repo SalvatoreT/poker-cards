@@ -1,5 +1,19 @@
 // Import and register the <playing-card> web component
 import "poker-card-element"
+
+// Map numeric suit/rank attributes to URL-friendly names
+const suitNames = ["spades", "hearts", "diamonds", "clubs"] as const
+const rankNames = ["", "ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"] as const
+
+// Click any card to open its SVG
+document.addEventListener("click", (e) => {
+	const card = (e.target as Element).closest("playing-card")
+	if (!card) return
+	const suit = suitNames[Number(card.getAttribute("suit"))]
+	const rank = rankNames[Number(card.getAttribute("rank"))]
+	if (suit && rank) window.open(`/card/${suit}-${rank}.svg`, "_blank")
+})
+
 // Interactive card picker
 const suitSelect = document.getElementById("suit-select") as HTMLSelectElement
 const rankSelect = document.getElementById("rank-select") as HTMLSelectElement
@@ -43,3 +57,20 @@ randomHandBtn.addEventListener("click", generateRandomHand)
 
 // Generate initial hand
 generateRandomHand()
+
+// Populate card grids with images from /card/ route
+const ranks = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"]
+for (const grid of document.querySelectorAll<HTMLElement>(".card-grid[data-suit]")) {
+	const suit = grid.dataset.suit!
+	for (const rank of ranks) {
+		const url = `/card/${suit}-${rank}.svg`
+		const a = document.createElement("a")
+		a.href = url
+		a.target = "_blank"
+		const img = document.createElement("img")
+		img.src = url
+		img.alt = `${rank} of ${suit}`
+		a.appendChild(img)
+		grid.appendChild(a)
+	}
+}

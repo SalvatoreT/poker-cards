@@ -33,6 +33,13 @@
 			grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
 			gap: 0.5rem;
 		}
+		.card-grid a {
+			display: block;
+		}
+		.card-grid img {
+			width: 100%;
+			height: auto;
+		}
 		.suit-section {
 			margin-bottom: 1.5rem;
 		}
@@ -42,6 +49,7 @@
 		}
 		playing-card {
 			width: 80px;
+			cursor: pointer;
 		}
 		playing-card img {
 			width: 100%;
@@ -159,78 +167,22 @@
 
 		<div class="suit-section">
 			<h3>Spades</h3>
-			<div class="card-grid">
-				<playing-card suit="0" rank="1"></playing-card>
-				<playing-card suit="0" rank="2"></playing-card>
-				<playing-card suit="0" rank="3"></playing-card>
-				<playing-card suit="0" rank="4"></playing-card>
-				<playing-card suit="0" rank="5"></playing-card>
-				<playing-card suit="0" rank="6"></playing-card>
-				<playing-card suit="0" rank="7"></playing-card>
-				<playing-card suit="0" rank="8"></playing-card>
-				<playing-card suit="0" rank="9"></playing-card>
-				<playing-card suit="0" rank="10"></playing-card>
-				<playing-card suit="0" rank="11"></playing-card>
-				<playing-card suit="0" rank="12"></playing-card>
-				<playing-card suit="0" rank="13"></playing-card>
-			</div>
+			<div class="card-grid" data-suit="spades"></div>
 		</div>
 
 		<div class="suit-section">
 			<h3>Hearts</h3>
-			<div class="card-grid">
-				<playing-card suit="1" rank="1"></playing-card>
-				<playing-card suit="1" rank="2"></playing-card>
-				<playing-card suit="1" rank="3"></playing-card>
-				<playing-card suit="1" rank="4"></playing-card>
-				<playing-card suit="1" rank="5"></playing-card>
-				<playing-card suit="1" rank="6"></playing-card>
-				<playing-card suit="1" rank="7"></playing-card>
-				<playing-card suit="1" rank="8"></playing-card>
-				<playing-card suit="1" rank="9"></playing-card>
-				<playing-card suit="1" rank="10"></playing-card>
-				<playing-card suit="1" rank="11"></playing-card>
-				<playing-card suit="1" rank="12"></playing-card>
-				<playing-card suit="1" rank="13"></playing-card>
-			</div>
+			<div class="card-grid" data-suit="hearts"></div>
 		</div>
 
 		<div class="suit-section">
 			<h3>Diamonds</h3>
-			<div class="card-grid">
-				<playing-card suit="2" rank="1"></playing-card>
-				<playing-card suit="2" rank="2"></playing-card>
-				<playing-card suit="2" rank="3"></playing-card>
-				<playing-card suit="2" rank="4"></playing-card>
-				<playing-card suit="2" rank="5"></playing-card>
-				<playing-card suit="2" rank="6"></playing-card>
-				<playing-card suit="2" rank="7"></playing-card>
-				<playing-card suit="2" rank="8"></playing-card>
-				<playing-card suit="2" rank="9"></playing-card>
-				<playing-card suit="2" rank="10"></playing-card>
-				<playing-card suit="2" rank="11"></playing-card>
-				<playing-card suit="2" rank="12"></playing-card>
-				<playing-card suit="2" rank="13"></playing-card>
-			</div>
+			<div class="card-grid" data-suit="diamonds"></div>
 		</div>
 
 		<div class="suit-section">
 			<h3>Clubs</h3>
-			<div class="card-grid">
-				<playing-card suit="3" rank="1"></playing-card>
-				<playing-card suit="3" rank="2"></playing-card>
-				<playing-card suit="3" rank="3"></playing-card>
-				<playing-card suit="3" rank="4"></playing-card>
-				<playing-card suit="3" rank="5"></playing-card>
-				<playing-card suit="3" rank="6"></playing-card>
-				<playing-card suit="3" rank="7"></playing-card>
-				<playing-card suit="3" rank="8"></playing-card>
-				<playing-card suit="3" rank="9"></playing-card>
-				<playing-card suit="3" rank="10"></playing-card>
-				<playing-card suit="3" rank="11"></playing-card>
-				<playing-card suit="3" rank="12"></playing-card>
-				<playing-card suit="3" rank="13"></playing-card>
-			</div>
+			<div class="card-grid" data-suit="clubs"></div>
 		</div>
 	</section>
 
