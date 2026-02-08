@@ -1,5 +1,5 @@
 {
-  "name": "cards-monorepo",
+  "name": "poker-cards-monorepo",
   "license": "MIT",
   "scripts": {
     "build": "bunup",

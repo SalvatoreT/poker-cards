@@ -7,7 +7,7 @@
 		"preview": "bun run serve.ts"
 	},
 	"dependencies": {
-		"card": "workspace:*",
-		"card-element": "workspace:*"
+		"poker-cards": "workspace:*",
+		"poker-card-element": "workspace:*"
 	}
 }

@@ -1,5 +1,5 @@
-import { renderCardToDataUri, ATTRIBUTE_NAMES, RANK_NAMES, SUIT_NAMES } from "card"
-import type { CardRenderOptions } from "card"
+import { renderCardToDataUri, ATTRIBUTE_NAMES, RANK_NAMES, SUIT_NAMES } from "poker-cards"
+import type { CardRenderOptions } from "poker-cards"
 
 function renderElement(el: PlayingCard): void {
 	const attrs = el.constructor as typeof PlayingCard

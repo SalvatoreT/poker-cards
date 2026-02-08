@@ -4,11 +4,11 @@ import { defineWorkspace } from 'bunup'
 
 export default defineWorkspace([
 	{
-		name: 'card',
-		root: 'packages/card'
+		name: 'poker-cards',
+		root: 'packages/poker-cards'
 	},
 	{
-		name: 'card-element',
-		root: 'packages/card-element'
+		name: 'poker-card-element',
+		root: 'packages/poker-card-element'
 	}
 ])

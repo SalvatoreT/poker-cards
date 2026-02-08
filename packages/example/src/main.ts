@@ -1,5 +1,5 @@
 // Import and register the <playing-card> web component
-import "card-element"
+import "poker-card-element"
 // Interactive card picker
 const suitSelect = document.getElementById("suit-select") as HTMLSelectElement
 const rankSelect = document.getElementById("rank-select") as HTMLSelectElement

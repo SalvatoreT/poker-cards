@@ -10,35 +10,35 @@
         "typescript": "^5.9.3",
       },
     },
-    "packages/card": {
-      "name": "card",
-      "version": "0.1.0",
-      "peerDependencies": {
-        "typescript": ">=4.5.0",
-      },
-      "optionalPeers": [
-        "typescript",
-      ],
-    },
-    "packages/card-element": {
-      "name": "card-element",
-      "version": "0.1.0",
-      "dependencies": {
-        "card": "workspace:*",
-      },
-      "peerDependencies": {
-        "typescript": ">=4.5.0",
-      },
-      "optionalPeers": [
-        "typescript",
-      ],
-    },
     "packages/example": {
       "name": "example",
       "dependencies": {
-        "card": "workspace:*",
-        "card-element": "workspace:*",
+        "poker-card-element": "workspace:*",
+        "poker-cards": "workspace:*",
       },
+    },
+    "packages/poker-card-element": {
+      "name": "poker-card-element",
+      "version": "0.1.0",
+      "dependencies": {
+        "poker-cards": "workspace:*",
+      },
+      "peerDependencies": {
+        "typescript": ">=4.5.0",
+      },
+      "optionalPeers": [
+        "typescript",
+      ],
+    },
+    "packages/poker-cards": {
+      "name": "poker-cards",
+      "version": "0.1.0",
+      "peerDependencies": {
+        "typescript": ">=4.5.0",
+      },
+      "optionalPeers": [
+        "typescript",
+      ],
     },
   },
   "packages": {
@@ -172,10 +172,6 @@
 
     "bunup": ["bunup@0.16.22", "", { "dependencies": { "@bunup/dts": "^0.14.50", "@bunup/shared": "0.16.20", "chokidar": "^5.0.0", "coffi": "^0.1.37", "lightningcss": "^1.30.2", "picocolors": "^1.1.1", "tinyexec": "^1.0.2", "tree-kill": "^1.2.2", "zlye": "^0.4.4" }, "peerDependencies": { "typescript": "latest" }, "optionalPeers": ["typescript"], "bin": { "bunup": "dist/cli/index.js" } }, "sha512-R1ARiGA396bP/PYDA3dB6SwpB5zsypEt1KJtG34HvuoJBZJTP7NK2k9GUALXyhB/2V2v62GMh356IAJInCJ7vA=="],
 
-    "card": ["card@workspace:packages/card"],
-
-    "card-element": ["card-element@workspace:packages/card-element"],
-
     "chokidar": ["chokidar@5.0.0", "", { "dependencies": { "readdirp": "^5.0.0" } }, "sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw=="],
 
     "coffi": ["coffi@0.1.37", "", { "dependencies": { "strip-json-comments": "^5.0.3" } }, "sha512-ewO5Xis7sw7g54yI/3lJ/nNV90Er4ZnENeDORZjrs58T70MmwKFLZgevraNCz+RmB4KDKsYT1ui1wDB36iPWqQ=="],
@@ -215,6 +211,10 @@
     "oxc-transform": ["oxc-transform@0.93.0", "", { "optionalDependencies": { "@oxc-transform/binding-android-arm64": "0.93.0", "@oxc-transform/binding-darwin-arm64": "0.93.0", "@oxc-transform/binding-darwin-x64": "0.93.0", "@oxc-transform/binding-freebsd-x64": "0.93.0", "@oxc-transform/binding-linux-arm-gnueabihf": "0.93.0", "@oxc-transform/binding-linux-arm-musleabihf": "0.93.0", "@oxc-transform/binding-linux-arm64-gnu": "0.93.0", "@oxc-transform/binding-linux-arm64-musl": "0.93.0", "@oxc-transform/binding-linux-riscv64-gnu": "0.93.0", "@oxc-transform/binding-linux-s390x-gnu": "0.93.0", "@oxc-transform/binding-linux-x64-gnu": "0.93.0", "@oxc-transform/binding-linux-x64-musl": "0.93.0", "@oxc-transform/binding-wasm32-wasi": "0.93.0", "@oxc-transform/binding-win32-arm64-msvc": "0.93.0", "@oxc-transform/binding-win32-x64-msvc": "0.93.0" } }, "sha512-QCwM2nMAWf4hEBehLVA2apllxdmmWLb5M0in9HwC2boaaFbP0QntbLy4hfRZGur2KKyEBErZbH9S5NYX8eHslg=="],
 
     "picocolors": ["picocolors@1.1.1", "", {}, "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="],
+
+    "poker-card-element": ["poker-card-element@workspace:packages/poker-card-element"],
+
+    "poker-cards": ["poker-cards@workspace:packages/poker-cards"],
 
     "readdirp": ["readdirp@5.0.0", "", {}, "sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ=="],
 

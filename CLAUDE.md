@@ -8,8 +8,8 @@ A monorepo for rendering playing cards in pure TypeScript. Uses Bun workspaces w
 
 Contains three packages:
 
-- **`packages/card`** — Core library for rendering playing cards as SVG strings. Pure TypeScript, no DOM dependency. Works in Node, Bun, Deno, SSR, etc.
-- **`packages/card-element`** — A `<playing-card>` Web Component that wraps the core library. Browser-only. Depends on `card` via workspace.
+- **`packages/poker-cards`** — Core library (`poker-cards` on npm) for rendering playing cards as SVG strings. Pure TypeScript, no DOM dependency. Works in Node, Bun, Deno, SSR, etc.
+- **`packages/poker-card-element`** — A `<playing-card>` Web Component (`poker-card-element` on npm) that wraps the core library. Browser-only. Depends on `poker-cards` via workspace.
 - **`packages/example`** — Static demo page showcasing the card library and web component. Private, not publishable.
 
 ## Build & Development Commands
@@ -31,7 +31,7 @@ bun run type-check
 
 The build tool is **Bunup** (configured in `bunup.config.ts`).
 
-**Note:** `card-element` depends on `card`'s built output for type-checking. Run `bun run build` before `bun run type-check` if the `card` package's `dist/` is missing.
+**Note:** `poker-card-element` depends on `poker-cards`'s built output for type-checking. Run `bun run build` before `bun run type-check` if the `poker-cards` package's `dist/` is missing.
 
 ## Architecture
 
@@ -40,24 +40,24 @@ The build tool is **Bunup** (configured in `bunup.config.ts`).
 - **ESM-only** output with TypeScript declaration files
 - **Strict TypeScript** with `noUncheckedIndexedAccess`, `isolatedDeclarations`, and other strict options enabled (see `tsconfig.base.json`)
 - Package entry points use the `exports` field in package.json with separate `types` and `default` conditions
-- `card-element` depends on `card` via `"card": "workspace:*"`
+- `poker-card-element` depends on `poker-cards` via `"poker-cards": "workspace:*"`
 
 ## Package Details
 
-### `packages/card` (core)
+### `packages/poker-cards` (core)
 
 - `src/data.ts` — Auto-generated SVG path data for suits, ranks, court card artwork. **Do not edit manually** — regenerate from `elements.cardmeister.full.js` if needed.
 - `src/types.ts` — `CardRenderOptions` interface and related types.
 - `src/render.ts` — `renderCard()` (returns SVG string) and `renderCardToDataUri()` (returns data URI). This is a faithful translation of the original `cardt` function from cardmeister.
 - `src/index.ts` — Re-exports from the above modules.
 
-### `packages/card-element` (web component)
+### `packages/poker-card-element` (web component)
 
-- `src/index.ts` — Defines and registers the `<playing-card>` custom element. Imports rendering from `card`.
+- `src/index.ts` — Defines and registers the `<playing-card>` custom element. Imports rendering from `poker-cards`.
 
 ### `packages/example` (demo page)
 
-- `src/main.ts` — Interactive card picker, random hand generator. Imports `card-element` to register the web component.
+- `src/main.ts` — Interactive card picker, random hand generator. Imports `poker-card-element` to register the web component.
 - `index.html` — Static HTML demo with sections for all suits, interactive picker, random hand, and card backs.
 - Build uses `bun build` CLI to bundle `src/main.ts` into `dist/main.js`. Run via `bun run build:example`.
 

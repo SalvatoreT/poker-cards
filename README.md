@@ -1,15 +1,15 @@
-# Cards
+# Poker Cards
 
 A monorepo for rendering playing cards as SVG in pure TypeScript.
 
 ## Packages
 
-### `card` — Core rendering library
+### `poker-cards` — Core rendering library
 
 Renders playing cards as SVG strings with no DOM dependency. Works in Node, Bun, Deno, browsers, SSR — anywhere TypeScript/JavaScript runs.
 
 ```ts
-import { renderCard, renderCardToDataUri } from "card"
+import { renderCard, renderCardToDataUri } from "poker-cards"
 
 // Get raw SVG markup
 const svg = renderCard({ suit: 0, rank: 1 }) // Ace of Spades
@@ -48,12 +48,12 @@ renderCard({ rank: 0 })
 | `shadow` | `string` | `"5,5,5"` | Drop shadow: dx,dy,stdDeviation |
 | `svg` | `string` | `""` | Extra attributes on the root `<svg>` element |
 
-### `card-element` — Web Component
+### `poker-card-element` — Web Component
 
 A `<playing-card>` custom element that wraps the core library. Import it to register the element, then use it in HTML.
 
 ```ts
-import "card-element"
+import "poker-card-element"
 ```
 
 ```html

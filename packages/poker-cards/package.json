@@ -1,16 +1,18 @@
 {
-  "name": "card-element",
+  "name": "poker-cards",
   "version": "0.1.0",
-  "description": "A <playing-card> Web Component for rendering playing cards as SVG",
+  "description": "Render playing cards on your site/app in pure TypeScript",
+  "homepage": "https://github.com/SalvatoreT/poker-cards/tree/main/packages/poker-cards#readme",
   "license": "MIT",
   "files": [
     "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SalvatoreT/poker-cards.git"
+  },
   "scripts": {
     "type-check": "tsc --noEmit"
-  },
-  "dependencies": {
-    "card": "workspace:*"
   },
   "peerDependencies": {
     "typescript": ">=4.5.0"
