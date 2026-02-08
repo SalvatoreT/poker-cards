@@ -1,0 +1,13 @@
+{
+	"name": "example",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "bun build index.html --outdir dist --minify",
+		"preview": "bun run serve.ts"
+	},
+	"dependencies": {
+		"card": "workspace:*",
+		"card-element": "workspace:*"
+	}
+}

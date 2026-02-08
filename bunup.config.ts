@@ -6,5 +6,9 @@ export default defineWorkspace([
 	{
 		name: 'card',
 		root: 'packages/card'
+	},
+	{
+		name: 'card-element',
+		root: 'packages/card-element'
 	}
 ])

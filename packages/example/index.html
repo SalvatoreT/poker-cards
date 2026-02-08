@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Playing Cards Demo</title>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: system-ui, -apple-system, sans-serif;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem;
+			background: #1a1a2e;
+			color: #eee;
+		}
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+		h2 {
+			border-bottom: 2px solid #444;
+			padding-bottom: 0.5rem;
+			margin-top: 2rem;
+		}
+		section {
+			margin-bottom: 3rem;
+		}
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+			gap: 0.5rem;
+		}
+		.suit-section {
+			margin-bottom: 1.5rem;
+		}
+		.suit-section h3 {
+			margin: 0.5rem 0;
+			color: #aaa;
+		}
+		playing-card {
+			width: 80px;
+		}
+		playing-card img {
+			width: 100%;
+			height: auto;
+		}
+		.controls {
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+			flex-wrap: wrap;
+			margin-bottom: 1rem;
+		}
+		select, button {
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+			border-radius: 4px;
+			border: 1px solid #444;
+			background: #2a2a3e;
+			color: #eee;
+			cursor: pointer;
+		}
+		select:hover, button:hover {
+			background: #3a3a4e;
+		}
+		.preview-container {
+			display: flex;
+			gap: 2rem;
+			align-items: flex-start;
+		}
+		.preview-card {
+			width: 150px;
+		}
+		.preview-card img {
+			width: 100%;
+			height: auto;
+		}
+		.hand-container {
+			display: flex;
+			gap: 0.5rem;
+			flex-wrap: wrap;
+		}
+		.hand-container playing-card {
+			width: 100px;
+		}
+		.backs-grid {
+			display: flex;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+		.backs-grid playing-card {
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Playing Cards Demo</h1>
+
+	<section>
+		<h2>Interactive Card Picker</h2>
+		<div class="preview-container">
+			<div>
+				<div class="controls">
+					<label>
+						Suit:
+						<select id="suit-select">
+							<option value="0">Spades</option>
+							<option value="1">Hearts</option>
+							<option value="2">Diamonds</option>
+							<option value="3">Clubs</option>
+						</select>
+					</label>
+					<label>
+						Rank:
+						<select id="rank-select">
+							<option value="1">Ace</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">Jack</option>
+							<option value="12">Queen</option>
+							<option value="13">King</option>
+						</select>
+					</label>
+				</div>
+			</div>
+			<playing-card id="preview-card" class="preview-card" suit="0" rank="1"></playing-card>
+		</div>
+	</section>
+
+	<section>
+		<h2>Random Hand</h2>
+		<button id="random-hand-btn">Deal New Hand</button>
+		<div id="hand-container" class="hand-container" style="margin-top: 1rem;"></div>
+	</section>
+
+	<section>
+		<h2>Card Backs</h2>
+		<div class="backs-grid">
+			<playing-card rank="0" backcolor="#1e3a5f"></playing-card>
+			<playing-card rank="0" backcolor="#5f1e3a"></playing-card>
+			<playing-card rank="0" backcolor="#3a5f1e"></playing-card>
+			<playing-card rank="0" backcolor="#5f3a1e"></playing-card>
+			<playing-card rank="0" backcolor="#3a1e5f"></playing-card>
+		</div>
+	</section>
+
+	<section>
+		<h2>All Cards by Suit</h2>
+
+		<div class="suit-section">
+			<h3>Spades</h3>
+			<div class="card-grid">
+				<playing-card suit="0" rank="1"></playing-card>
+				<playing-card suit="0" rank="2"></playing-card>
+				<playing-card suit="0" rank="3"></playing-card>
+				<playing-card suit="0" rank="4"></playing-card>
+				<playing-card suit="0" rank="5"></playing-card>
+				<playing-card suit="0" rank="6"></playing-card>
+				<playing-card suit="0" rank="7"></playing-card>
+				<playing-card suit="0" rank="8"></playing-card>
+				<playing-card suit="0" rank="9"></playing-card>
+				<playing-card suit="0" rank="10"></playing-card>
+				<playing-card suit="0" rank="11"></playing-card>
+				<playing-card suit="0" rank="12"></playing-card>
+				<playing-card suit="0" rank="13"></playing-card>
+			</div>
+		</div>
+
+		<div class="suit-section">
+			<h3>Hearts</h3>
+			<div class="card-grid">
+				<playing-card suit="1" rank="1"></playing-card>
+				<playing-card suit="1" rank="2"></playing-card>
+				<playing-card suit="1" rank="3"></playing-card>
+				<playing-card suit="1" rank="4"></playing-card>
+				<playing-card suit="1" rank="5"></playing-card>
+				<playing-card suit="1" rank="6"></playing-card>
+				<playing-card suit="1" rank="7"></playing-card>
+				<playing-card suit="1" rank="8"></playing-card>
+				<playing-card suit="1" rank="9"></playing-card>
+				<playing-card suit="1" rank="10"></playing-card>
+				<playing-card suit="1" rank="11"></playing-card>
+				<playing-card suit="1" rank="12"></playing-card>
+				<playing-card suit="1" rank="13"></playing-card>
+			</div>
+		</div>
+
+		<div class="suit-section">
+			<h3>Diamonds</h3>
+			<div class="card-grid">
+				<playing-card suit="2" rank="1"></playing-card>
+				<playing-card suit="2" rank="2"></playing-card>
+				<playing-card suit="2" rank="3"></playing-card>
+				<playing-card suit="2" rank="4"></playing-card>
+				<playing-card suit="2" rank="5"></playing-card>
+				<playing-card suit="2" rank="6"></playing-card>
+				<playing-card suit="2" rank="7"></playing-card>
+				<playing-card suit="2" rank="8"></playing-card>
+				<playing-card suit="2" rank="9"></playing-card>
+				<playing-card suit="2" rank="10"></playing-card>
+				<playing-card suit="2" rank="11"></playing-card>
+				<playing-card suit="2" rank="12"></playing-card>
+				<playing-card suit="2" rank="13"></playing-card>
+			</div>
+		</div>
+
+		<div class="suit-section">
+			<h3>Clubs</h3>
+			<div class="card-grid">
+				<playing-card suit="3" rank="1"></playing-card>
+				<playing-card suit="3" rank="2"></playing-card>
+				<playing-card suit="3" rank="3"></playing-card>
+				<playing-card suit="3" rank="4"></playing-card>
+				<playing-card suit="3" rank="5"></playing-card>
+				<playing-card suit="3" rank="6"></playing-card>
+				<playing-card suit="3" rank="7"></playing-card>
+				<playing-card suit="3" rank="8"></playing-card>
+				<playing-card suit="3" rank="9"></playing-card>
+				<playing-card suit="3" rank="10"></playing-card>
+				<playing-card suit="3" rank="11"></playing-card>
+				<playing-card suit="3" rank="12"></playing-card>
+				<playing-card suit="3" rank="13"></playing-card>
+			</div>
+		</div>
+	</section>
+
+	<script type="module" src="./src/main.ts"></script>
+</body>
+</html>

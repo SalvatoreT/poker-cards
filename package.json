@@ -3,6 +3,7 @@
   "license": "MIT",
   "scripts": {
     "build": "bunup",
+    "build:example": "bun run --filter example build",
     "dev": "bunup --watch",
     "type-check": "bun run --filter '*' type-check"
   },
