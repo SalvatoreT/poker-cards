@@ -57,9 +57,23 @@ The build tool is **Bunup** (configured in `bunup.config.ts`).
 
 ### `packages/example` (demo page)
 
-- `src/main.ts` — Interactive card picker, random hand generator. Imports `poker-card-element` to register the web component.
+- `src/main.ts` — Interactive card picker, random hand generator, and card grid population. Imports `poker-card-element` to register the web component.
 - `index.html` — Static HTML demo with sections for all suits, interactive picker, random hand, and card backs.
-- Build uses `bun build` CLI to bundle `src/main.ts` into `dist/main.js`. Run via `bun run build:example`.
+- `build.ts` — Build script using `Bun.build()` to bundle `index.html` into `dist/`, then generates all 52 card SVGs into `dist/card/` using `renderCard()`. Run via `bun run build:example`.
+- `serve.ts` — Bun dev server. Serves static files from `dist/`.
+
+#### Pre-built Card SVGs
+
+The build generates 52 SVG files at `dist/card/<suit>-<rank>.svg`:
+- `/card/spades-queen.svg`, `/card/hearts-jack.svg`, `/card/diamonds-ace.svg`, `/card/clubs-10.svg`
+- Suit: `spades`, `hearts`, `diamonds`, `clubs`
+- Rank: `ace`, `2`–`10`, `jack`, `queen`, `king`
+
+The "All Cards by Suit" grid on the demo page loads cards as `<img>` elements from these URLs.
+
+## MCP Servers
+
+At the start of a session, activate the **Serena** project by calling the `mcp__serena__activate_project` tool with `"poker-cards"` before doing any code work. Then call `mcp__serena__check_onboarding_performed` to load project context.
 
 ## Code Style
 

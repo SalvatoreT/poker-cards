@@ -8,8 +8,9 @@ bun run build
 # Build example demo page
 bun run build:example
 
-# Open example in browser
-open packages/example/dist/index.html
+# Build and preview example with dev server (pre-built card SVGs served as static files)
+bun run build && bun run --filter example preview
+# Then open http://localhost:3000
 
 # Watch mode (rebuild on changes)
 bun run dev

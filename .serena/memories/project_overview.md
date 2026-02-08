@@ -21,8 +21,15 @@ A monorepo for rendering playing cards in pure TypeScript as SVG strings. Origin
 - `src/render.ts` — `renderCard()` and `renderCardToDataUri()` functions.
 - `src/index.ts` — Re-exports.
 
-## Architecture Notes
-- ESM-only output with TypeScript declaration files
-- Package entry points use `exports` field with separate `types` and `default` conditions
-- `poker-card-element` depends on `poker-cards` via `"poker-cards": "workspace:*"`
-- Root `package.json` also re-exports `poker-cards` as the base package
+## Key Files in `packages/example`
+- `src/main.ts` — Interactive card picker, random hand generator, and card grid population (loads cards as `<img>` from pre-built SVGs).
+- `index.html` — Static HTML demo page.
+- `build.ts` — Build script using `Bun.build()` to bundle `index.html` into `dist/`, then generates all 52 card SVGs into `dist/card/` using `renderCard()`. Run via `bun run build:example`.
+- `serve.ts` — Bun dev server. Serves static files from `dist/`.
+
+## Pre-built Card SVGs (`packages/example/build.ts`)
+The build generates 52 SVG files at `dist/card/<suit>-<rank>.svg` using `renderCard()` from `poker-cards`.
+- **URL format:** `/card/spades-queen.svg`, `/card/hearts-jack.svg`, `/card/diamonds-ace.svg`, `/card/clubs-10.svg`
+- **Suits:** `spades`, `hearts`, `diamonds`, `clubs`
+- **Ranks:** `ace`, `2`–`10`, `jack`, `queen`, `king`
+- The "All Cards by Suit" grid on the demo page loads cards as `<img>` elements from these files.
