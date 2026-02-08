@@ -326,7 +326,7 @@ export function renderCard(options: CardRenderOptions = {}): string {
 			[[35.8, -124], [-88, -124], [30, -124], [30, -124]],
 			[[-88, -124], [-88, -124], [-82.5, -124], [-82.5, -124]],
 		]
-		const suitPos = courtSuitPositions[courtStyle || 1]?.[suitVariant || 1] ?? [-88, -124]
+		const suitPos = courtSuitPositions[courtStyle]?.[suitVariant] ?? [-88, -124]
 
 		// Court card artwork layers: gold, red, blue, black, detail
 		const layerNames = ["go", "re", "bu", "ba", "de"]
