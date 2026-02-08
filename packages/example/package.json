@@ -3,7 +3,7 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "bun build index.html --outdir dist --minify",
+		"build": "bun run build.ts",
 		"preview": "bun run serve.ts"
 	},
 	"dependencies": {
