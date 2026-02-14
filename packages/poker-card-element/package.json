@@ -1,6 +1,6 @@
 {
   "name": "poker-card-element",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A <playing-card> Web Component for rendering playing cards as SVG",
   "license": "MIT",
   "files": [

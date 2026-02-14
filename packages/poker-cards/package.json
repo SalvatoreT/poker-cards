@@ -1,6 +1,6 @@
 {
   "name": "poker-cards",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Render playing cards on your site/app in pure TypeScript",
   "homepage": "https://github.com/SalvatoreT/poker-cards/tree/main/packages/poker-cards#readme",
   "license": "MIT",
