@@ -1,15 +1,16 @@
-name: Publish to npm
+name: Publish Package
 
 on:
   release:
     types: [published]
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
     steps:
       - uses: actions/checkout@v5
 
@@ -17,7 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: "22.x"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org"
 
       - run: bun install
@@ -27,10 +28,8 @@ jobs:
       - run: bun run type-check
 
       - name: Publish poker-cards
-        run: npm publish --provenance
+        run: npm publish
         working-directory: packages/poker-cards
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish poker-card-element
         run: |
@@ -41,7 +40,5 @@ jobs:
             pkg.dependencies['poker-cards'] = '^' + process.argv[1];
             fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
           " "$POKER_CARDS_VERSION"
-          npm publish --provenance
+          npm publish
         working-directory: packages/poker-card-element
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
