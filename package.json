@@ -1,5 +1,6 @@
 {
   "name": "poker-cards",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "build": "bunup",
@@ -15,19 +16,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./packages/poker-cards/dist/index.d.ts",
-        "default": "./packages/poker-cards/dist/index.js"
-      }
-    }
-  },
-  "module": "./packages/poker-cards/dist/index.js",
-  "types": "./packages/poker-cards/dist/index.d.ts",
-  "files": [
-    "packages/poker-cards/dist"
   ]
 }
