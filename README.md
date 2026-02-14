@@ -2,6 +2,22 @@
 
 A monorepo for rendering playing cards as SVG in pure TypeScript.
 
+## Installation
+
+```bash
+# Core library only
+npm install poker-cards
+yarn add poker-cards
+pnpm add poker-cards
+bun add poker-cards
+
+# Web Component (includes core library as a dependency)
+npm install poker-card-element
+yarn add poker-card-element
+pnpm add poker-card-element
+bun add poker-card-element
+```
+
 ## Packages
 
 ### `poker-cards` — Core rendering library
