@@ -80,7 +80,7 @@ In a plain HTML page — no build step, no `import`, just a `<script type="modul
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="module" src="https://cdn.jsdelivr.net/npm/poker-card-element"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/poker-card-element/+esm"></script>
 </head>
 <body>
 	<playing-card suit="1" rank="12"></playing-card>   <!-- Queen of Hearts -->
