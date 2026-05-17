@@ -11,7 +11,7 @@ document.addEventListener("click", (e) => {
 	if (!card) return
 	const suit = suitNames[Number(card.getAttribute("suit"))]
 	const rank = rankNames[Number(card.getAttribute("rank"))]
-	if (suit && rank) window.open(`/card/${suit}-${rank}.svg`, "_blank")
+	if (suit && rank) window.open(`card/${suit}-${rank}.svg`, "_blank")
 })
 
 // Interactive card picker
@@ -63,7 +63,7 @@ const ranks = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "que
 for (const grid of document.querySelectorAll<HTMLElement>(".card-grid[data-suit]")) {
 	const suit = grid.dataset.suit!
 	for (const rank of ranks) {
-		const url = `/card/${suit}-${rank}.svg`
+		const url = `card/${suit}-${rank}.svg`
 		const a = document.createElement("a")
 		a.href = url
 		a.target = "_blank"
