@@ -66,16 +66,28 @@ renderCard({ rank: 0 })
 
 ### `poker-card-element` — Web Component
 
-A `<playing-card>` custom element that wraps the core library. Import it to register the element, then use it in HTML.
+A `<playing-card>` custom element that wraps the core library. Importing the module registers the element; from then on, `<playing-card>` works as native HTML.
+
+In a bundled app:
 
 ```ts
 import "poker-card-element"
 ```
 
+In a plain HTML page — no build step, no `import`, just a `<script type="module">` from a CDN:
+
 ```html
-<playing-card suit="1" rank="12"></playing-card>   <!-- Queen of Hearts -->
-<playing-card cid="AS"></playing-card>              <!-- Ace of Spades -->
-<playing-card rank="0" backcolor="#338"></playing-card> <!-- Custom back -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/poker-card-element"></script>
+</head>
+<body>
+	<playing-card suit="1" rank="12"></playing-card>   <!-- Queen of Hearts -->
+	<playing-card cid="AS"></playing-card>              <!-- Ace of Spades -->
+	<playing-card rank="0" backcolor="#338"></playing-card> <!-- Custom back -->
+</body>
+</html>
 ```
 
 All options from the core library are available as HTML attributes.
